@@ -4,11 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>SoundCloud, Too!</title>
 </head>
 
 <body>
-
+    <div class="index__main_container">
+        <input type="text">
+        <div class="index__options_container">
+            <div class="index__options_container__option">
+                <input type="radio" name="video_timestamp" id="#radio_video">
+                <label for="#radio_video">Video</label>
+            </div>
+            <div class="index__options_container__option">
+                <input type="radio" name="video_timestamp" id="#radio_timestamp">
+                <label for="#radio_timestamp">Timestamp</label>
+            </div>
+        </div>
+        <button>Submit</button>
+        <pre>This is where the timestamp info will go.</pre>
+        <button>Download</button>
+    </div>
 </body>
 
 </html>
