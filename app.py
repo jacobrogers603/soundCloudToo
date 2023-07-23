@@ -6,7 +6,7 @@ app = Flask(__name__)
 app.secret_key = 'your_secret_key'  # Change this to a secure random key
 
 # Database setup
-conn = sqlite3.connect('credentials.db')
+conn = sqlite3.connect('data/credentials.db')
 cursor = conn.cursor()
 cursor.execute('''CREATE TABLE IF NOT EXISTS credentials
                   (id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -33,7 +33,7 @@ def register():
         hashed_password = hash_password(password)
 
         try:
-            conn = sqlite3.connect('credentials.db')
+            conn = sqlite3.connect('data/credentials.db')
             cursor = conn.cursor()
             cursor.execute('INSERT INTO credentials (username, email, password) VALUES (?, ?, ?)', (username, email, hashed_password))
             conn.commit()
@@ -63,7 +63,7 @@ def login():
         hashed_password = hash_password(password)
 
         try:
-            conn = sqlite3.connect('credentials.db')
+            conn = sqlite3.connect('data/credentials.db')
             cursor = conn.cursor()
             cursor.execute('SELECT * FROM credentials WHERE username = ? AND email = ? AND password = ?', (username, email, hashed_password))
             user = cursor.fetchone()
@@ -87,3 +87,28 @@ def index():
 
 if __name__ == '__main__':
     app.run(debug=True, )
+    
+## Desired structure of project below: ##
+# - project/
+    # - app.py
+    # - templates/
+    #     - login/
+    #         - index.html
+    #     - register
+    #         - index.html
+    #     ...
+    # - static/
+    #     - styles/
+    #         - credentials.css
+    #     - js/
+    #         - main.js
+    #     - images/
+    #         - logo.png
+    # - data/
+    #     - credentials.db
+    # - modules/
+    #     - __init__.py
+    #     - auth.py
+    #     - database.py
+    #     - other_module.py
+    # - requirements.txt
