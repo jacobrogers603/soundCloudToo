@@ -17,6 +17,18 @@ body {
     /* the above line puts padding for only the top & bottom */
 }
 
+.login {
+    display: flex;
+    flex-direction: column;
+    font-family: monospace, sans-serif;
+    background-color: #22daaf;
+    margin: 0;
+    gap: 10px;
+    width: 400px;
+    align-items: center;
+    padding: 10px 0; 
+}
+
 .inputField {
     display: flex;
     flex-direction: column;
