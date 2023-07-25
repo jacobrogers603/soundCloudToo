@@ -10,8 +10,13 @@
 
 <body>
   <nav>
-    <p><a href="{{ url_for('login') }}">Login</a></p>
-    <p><a href="{{ url_for('register') }}">Register</a></p>
+    <div class="nav__item_container">
+      <img src="" alt="sound cloud too logo">
+      <div class="nav__signin_container">
+        <p><a href="{{ url_for('register') }}">Register</a></p>
+        <p><a href="{{ url_for('login') }}">Login</a></p>
+      </div>
+    </div>
   </nav>
   <div class="main_container">
     <form action="/" method="post">

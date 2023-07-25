@@ -4,8 +4,9 @@
   --mint: hsla(177, 100%, 39%, 0.7);
   --white: hsla(0, 100%, 100%, 1);
 
-  --light-gray: hsla(0, 0%, 50%, 0.9);
-  --dark-gray: hsla(0, 0%, 20%, 0.9);
+  --gray0: hsla(0, 0%, 70%, 0.9);
+  --gray1: hsla(0, 0%, 50%, 0.9);
+  --gray2: hsla(0, 0%, 20%, 0.9);
 }
 
 * {
@@ -29,9 +30,21 @@ body {
 }
 
 nav {
+  background-color: var(--gray0);
+}
+
+.nav__item_container {
+  width: 100%;
+  max-width: 1440px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  margin: auto;
+}
+
+.nav__signin_container {
   display: flex;
   gap: 15px;
-  padding: 10px 20px;
 }
 
 .main_container {
@@ -44,7 +57,7 @@ nav {
 }
 
 input::placeholder {
-  color: var(--light-gray);
+  color: var(--gray1);
 }
 
 input:not(:placeholder-shown) {
@@ -65,7 +78,7 @@ input:not(:placeholder-shown) {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  color: var(--dark-gray);
+  color: var(--gray2);
   font-size: 1.1em;
   padding-left: 20px;
   margin-bottom: 30px;
@@ -76,7 +89,7 @@ input:not(:placeholder-shown) {
 
 .main_container > form > button {
   background-color: white;
-  color: var(--light-gray);
+  color: var(--gray1);
   font-size: 1em;
   padding: 5px 10px;
   border: none;
