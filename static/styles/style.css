@@ -1,38 +1,84 @@
-/* Import Fonts */
-:root {}
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+:root {
+  --mint: hsla(177, 100%, 39%, 0.7);
+  --white: hsla(0, 100%, 100%, 1);
+
+  --light-gray: hsla(0, 0%, 50%, 0.9);
+  --dark-gray: hsla(0, 0%, 20%, 0.9);
+}
 
 * {
-    font-family: '', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 *:before,
 :after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    height: 100svh;
-    background-image: url();
-    background-repeat: no-repeat;
-    background-position: right 50vw top 50vh
+  display: flex;
+  flex-direction: column;
+  height: 100svh;
 }
 
-.index__main_container {
-    width: 50%;
-    max-width: 800px;
-    display: flex;
-    flex-direction: column;
-    margin: auto;
+nav {
+  display: flex;
+  gap: 15px;
+  padding: 10px 20px;
 }
 
-.index__options_container {
-    /* display: flex;
-    flex-direction: column; */
+.main_container {
+  /* max-width: 600px; */
+  background-color: var(--mint);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px hsla(0, 0%, 0%, 0.2);
+  margin: auto;
+}
+
+input::placeholder {
+  color: var(--light-gray);
+}
+
+input:not(:placeholder-shown) {
+  color: black;
+}
+
+.main_container > form > input[type="url"] {
+  font-family: monospace;
+  font-size: 1.2rem;
+  width: 50ch;
+  padding: 0.5em;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.main_container__options_container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--dark-gray);
+  font-size: 1.1em;
+  padding-left: 20px;
+  margin-bottom: 30px;
+}
+
+.main_container__options_container__option_element {
+}
+
+.main_container > form > button {
+  background-color: white;
+  color: var(--light-gray);
+  font-size: 1em;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 10px;
 }

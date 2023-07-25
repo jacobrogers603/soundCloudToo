@@ -2,29 +2,37 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
-    <title>SoundCloud, Too!</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}" />
+  <title>SoundCloud, Too!</title>
 </head>
 
 <body>
-    <div class="index__main_container">
-        <input type="text">
-        <div class="index__options_container">
-            <div class="index__options_container__option">
-                <input type="radio" name="video_timestamp" id="#radio_video">
-                <label for="#radio_video">Video</label>
-            </div>
-            <div class="index__options_container__option">
-                <input type="radio" name="video_timestamp" id="#radio_timestamp">
-                <label for="#radio_timestamp">Timestamp</label>
-            </div>
+  <nav>
+    <p><a href="{{ url_for('login') }}">Login</a></p>
+    <p><a href="{{ url_for('register') }}">Register</a></p>
+  </nav>
+  <div class="main_container">
+    <form action="/" method="post">
+      <input type="url" placeholder="Paste video link" required />
+      <div class="main_container__options_container">
+        <div class="main_container__options_container__option_element">
+          <input type="radio" name="video_timestamp" id="#radio_timestamp" checked />
+          <label for="#radio_timestamp">Only the timestamps...</label>
         </div>
-        <button>Submit</button>
-        <pre>This is where the timestamp info will go.</pre>
-        <button>Download</button>
-    </div>
+        <div class="main_container__options_container__option_element">
+          <input type="radio" name="video_timestamp" id="#radio_video" />
+          <label for="#radio_video">Just the video</label>
+        </div>
+        <div class="main_container__options_container__option_element">
+          <input type="radio" name="video_timestamp" id="#radio_all" />
+          <label for="#radio_all">Give it all to me</label>
+        </div>
+      </div>
+      <button>Submit</button>
+    </form>
+  </div>
 </body>
 
 </html>
