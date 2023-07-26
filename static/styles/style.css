@@ -33,18 +33,41 @@ nav {
   background-color: var(--gray0);
 }
 
+a {
+  text-decoration: none;
+}
+
 .nav__item_container {
   width: 100%;
   max-width: 1440px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 10px 20px;
   margin: auto;
 }
 
 .nav__signin_container {
   display: flex;
+  align-items: center;
   gap: 15px;
+}
+
+.nav__signin_container a:first-child {
+  color: var(--gray2);
+}
+
+.nav__signin_container > a > button {
+  background-color: white;
+  color: var(--gray1);
+  font-size: 1.2rem;
+  padding: 10px 40px;
+  border: none;
+  border-radius: 10px;
+}
+
+.nav__signin_container > a > button:hover {
+  cursor: pointer;
 }
 
 .main_container {
